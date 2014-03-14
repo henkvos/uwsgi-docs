@@ -163,11 +163,12 @@ Test your Django project
 Now we want uWSGI to do the same thing, but to run a Django site instead of the
 ``test.py`` module.
 
-If you haven't already done so, make sure that your ``mysite`` project actually works::
+First stop the running uwsgi process using Ctrl-C.
+Then make sure that your ``mysite`` project actually runs using Django's built-in web server::
 
     python manage.py runserver 0.0.0.0:8000
 
-And if it that works, run it using uWSGI::
+If that works, stop Django's development server with Ctrl-C again, and run it using uWSGI::
 
     uwsgi --http :8000 --module mysite.wsgi
 
